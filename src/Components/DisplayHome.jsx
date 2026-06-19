@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Navbar from './Navbar'
 import { albumsData } from '../assets/assets'
 import AlbunItem from './AlbunItem'
