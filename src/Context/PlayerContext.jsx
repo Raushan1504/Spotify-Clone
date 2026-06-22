@@ -6,9 +6,9 @@ import {songsData} from '../assets/assets'
 export const PlayerContext = createContext();
 
 const PlayerContextProvider = (props) => {
-const audioRef = useRef(null)
-const seekBar = useRef(null)
-const seekBg = useRef(null);
+const audioRef = useRef()
+const seekBar = useRef()
+const seekBg = useRef();
 
 
 const [track,setTrack] = useState(songsData[0]);
@@ -54,10 +54,10 @@ useEffect(() => {
 }, []);
 
 
-
-
     const play = ()=> {
-        audioRef.current.play();
+
+        
+        audioRef.current.play()
         setPlayStatus(true)
     }
 
@@ -65,6 +65,27 @@ useEffect(() => {
         audioRef.current.pause();
         setPlayStatus(false)
 
+    }
+    const playWithId = async (id)=>{
+       await setTrack(songsData[id])
+       await audioRef.current.play()
+       setPlayStatus(true)
+    }
+
+    const previous = async () => {
+        if (track && track.id > 0) {
+            await setTrack(songsData[track.id - 1]);
+            await audioRef.current.play();
+            setPlayStatus(true);
+        }
+    }
+
+    const next = async () => {
+        if (track && track.id < songsData.length - 1) {
+            await setTrack(songsData[track.id + 1]);
+            await audioRef.current.play();
+            setPlayStatus(true);
+        }
     }
 
     const contextValue = {
@@ -74,7 +95,10 @@ useEffect(() => {
         track,setTrack,
         playStatus,setPlayStatus,
         time,setTime,
-        play,pause
+        play,pause,
+        playWithId,
+        previous,
+        next
     }
     return (
         <PlayerContext.Provider value={contextValue}>
