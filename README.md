@@ -6,7 +6,7 @@ A fully responsive, interactive **Spotify Clone** built using **React**, **Vite*
 
 ## 🚀 Deployment
 
-This project is configured for deployment on **Vercel**, **Netlify**, or other static hosting providers. The `vercel.json` file is included in the root to handle client-side routing redirects for React Router.
+👉 [**View Live**](https://spotify-clone-ochre-beta.vercel.app/)
 
 ---
 
@@ -36,32 +36,21 @@ This project is configured for deployment on **Vercel**, **Netlify**, or other s
 <summary>🏠 Home Dashboard (Click to expand)</summary>
 <br>
 
-
-
-```markdown
 ![Home Dashboard](public/screenshots/home.png)
-```
 </details>
 
 <details>
 <summary>💿 Album Details View (Click to expand)</summary>
 <br>
 
-
-```markdown
 ![Album Details View](public/screenshots/album.png)
-```
 </details>
 
 <details>
 <summary>🎵 Bottom Music Player (Click to expand)</summary>
 <br>
 
-
-
-```markdown
 ![Bottom Music Player](public/screenshots/player.png)
-```
 </details>
 
 ---
